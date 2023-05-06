@@ -1,0 +1,31 @@
+@startuml
+skin rose
+actor Client
+node {
+  () "ProtoInterface" as iproto
+  [ProtoParser] as parproto
+  [QueyBuilder] as qb
+  [ProtoEngine] as pe
+  [DatabaseAdapter] as dba
+  [DatabaseSchemeParser] as dbsp
+
+note bottom of dbsp
+  On start up it parses the scheme files
+  and calls code generators.
+end note
+}
+Client ..> iproto : Protobuf msg
+
+pe ..> parproto : use
+iproto - pe
+
+pe --> dba : invoke
+
+pe ..> qb : use
+note bottom of dba
+  The layer between the app
+  and the actual Database drivers.
+end note
+
+
+@enduml

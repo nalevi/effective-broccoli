@@ -1,0 +1,8 @@
+[requires]
+fmt/9.0.0
+gtest/1.13.0
+protobuf/3.21.9
+
+[generators]
+CMakeDeps
+CMakeToolchain
