@@ -10,8 +10,13 @@ include(${CMAKE_TOOLCHAIN_FILE})
 
 find_package(fmt REQUIRED)
 find_package(GTest REQUIRED)
+find_package(grpc REQUIRED)
 
 add_subdirectory(configured_files)
 add_subdirectory(src)
+add_subdirectory(test)
 
-target_link_libraries(${PROJECT_NAME} fmt::fmt GTest::gtest parser)
+target_link_libraries(${PROJECT_NAME}
+        fmt::fmt
+        #GTest::gtest
+        grpc::grpc parser)
