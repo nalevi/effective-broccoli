@@ -5,7 +5,7 @@ node {
   () "ProtoInterface" as iproto
   [ProtoParser] as parproto
   [QueyBuilder] as qb
-  [ProtoEngine] as pe
+  [gRPC Server] as pe
   [DatabaseAdapter] as dba
   [DatabaseSchemeParser] as dbsp
 
